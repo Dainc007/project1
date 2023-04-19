@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CompetitionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,4 +33,8 @@ Route::middleware(['auth'])
                 Route::patch('/', 'update')->name('update');
                 Route::delete('/', 'destroy')->name('destroy');
             });
+
+        Route::resource('competition',CompetitionController::class);
+        Route::post('/competition/data', [CompetitionController::class,'data'])->name('competition.data');
+
     });
