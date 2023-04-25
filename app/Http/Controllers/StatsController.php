@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStatsRequest;
 use App\Http\Requests\UpdateStatsRequest;
 use App\Models\Stats;
+use App\Service\Prototypes\PlayerStats;
 use Illuminate\Support\Facades\Storage;
 
 class StatsController extends Controller
@@ -26,7 +27,7 @@ class StatsController extends Controller
     {
         return inertia('Stats/Create', [
             'status' => session('status'),
-            'model'  => $model,
+            'model'  => (new PlayerStats())->getFromImage(),
         ]);
     }
 
