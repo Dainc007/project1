@@ -4,6 +4,10 @@
         "dev": "vite",
         "build": "vite build"
     },
+    "dependencies": {
+        "@formkit/themes": "^0.16.4",
+        "@formkit/vue": "^0.16.4"
+    },
     "devDependencies": {
         "@inertiajs/vue3": "^1.0.0",
         "@tailwindcss/forms": "^0.5.3",
