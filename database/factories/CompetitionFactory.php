@@ -17,7 +17,7 @@ class CompetitionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => sprintf('Competition %s',$this->faker->name)
         ];
     }
 }

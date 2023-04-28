@@ -1,8 +1,10 @@
 <?php
 
-namespace Database\Seeders;
+declare(strict_types=1);
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+namespace Database\Seeders\prod;
+
+use App\Models\Competition;
 use Illuminate\Database\Seeder;
 
 class CompetitionSeeder extends Seeder
@@ -12,6 +14,6 @@ class CompetitionSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Competition::factory(100)->create();
     }
 }
