@@ -36,5 +36,4 @@ Route::middleware(['auth'])
 
         Route::resource('competition',CompetitionController::class);
         Route::post('/competition/data', [CompetitionController::class,'data'])->name('competition.data');
-
     });
