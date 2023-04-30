@@ -41,7 +41,7 @@
                             <path
                                 d="M5.5 5h13a1 1 0 0 1 0.5 1.5L14 12L14 19L10 16L10 12L5 6.5a1 1 0 0 1 0.5 -1.5"/>
                         </svg>
-                        <span class="hidden md:block">Columns</span>
+                        <span class="hidden md:block">{{$t('Columns')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" width="24" height="24"
                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                              stroke-linecap="round" stroke-linejoin="round">
@@ -109,7 +109,7 @@
                         class="text-center bg-gray-100 sticky top-0 border-b border-gray-200 py-4 px-4 text-gray-600 font-bold tracking-wider uppercase text-xs"
                         v-if="actions.length > 0"
                     >
-                        Actions
+                        {{$t('Actions')}}
                     </th>
                 </tr>
                 </thead>
@@ -153,7 +153,7 @@
                 </template>
                 <template v-if="getRows.length === 0">
                     <tr class="border-dashed border-t border-gray-200 text-gray-700 px-4 py-4 flex items-center">
-                        No data to show
+                        {{$t('No data')}}
                     </tr>
                 </template>
                 </tbody>

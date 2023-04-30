@@ -1,9 +1,9 @@
 <template>
-    <Head title="Competition"/>
+    <Head :title="$t('Create')"/>
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Competition</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{$t('Create')}}</h2>
         </template>
 
         <div class="py-12">
@@ -17,19 +17,11 @@
 </template>
 
 <script setup>
-import {Head,router} from '@inertiajs/vue3';
+import {Head, router, usePage} from '@inertiajs/vue3';
 import {FormKitSchema} from "@formkit/vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 
-const schema = [
-    {
-        $formkit: 'text',
-        name: 'name',
-        label: 'Name',
-        placeholder: 'Enter competition name',
-        validation: 'required|length:6,255'
-    }
-];
+const schema = usePage().props.form;
 
 const submit = (data) => {
     router.post(route('competition.store'), data)

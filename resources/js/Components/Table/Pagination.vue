@@ -3,13 +3,13 @@
         class="flex justify-between text-xs font-semibold tracking-wide py-2 text-gray-500 uppercase border-t sm:grid-cols-9"
     >
         <div class="flex items-center col-span-3">
-            Showing
+            {{$t('Showing')}}
             {{ paginator.from || 0 }}
-            to
+            {{$t('to')}}
             {{ paginator.to || 0}}
-            of
+            {{$t('of')}}
             {{ paginator.total  || 0}}
-            results
+            {{$t('results')}}
         </div>
         <div class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
             <ul class="inline-flex items-center">
