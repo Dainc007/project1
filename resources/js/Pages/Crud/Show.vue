@@ -1,9 +1,9 @@
 <template>
-    <Head title="Competition"/>
+    <Head :title="$t('Preview')"/>
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Competition</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ $t('Preview') }}</h2>
         </template>
 
         <div class="py-12">

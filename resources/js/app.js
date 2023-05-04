@@ -8,6 +8,7 @@ import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy/dist/vue.m';
 import {plugin as formKitPlugin, defaultConfig} from '@formkit/vue'
 import {pl} from '@formkit/i18n'
+import { i18nVue } from 'laravel-vue-i18n'
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -17,6 +18,12 @@ createInertiaApp({
     setup({el, App, props, plugin}) {
         return createApp({render: () => h(App, props)})
             .use(plugin)
+            .use(i18nVue, {
+                resolve: async lang => {
+                    const languages = import.meta.glob('../../lang/*.json');
+                    return await languages[`../../lang/${lang}.json`]();
+                }
+            })
             .use(formKitPlugin, defaultConfig({
                 locales: {pl},
                 locale: 'pl',

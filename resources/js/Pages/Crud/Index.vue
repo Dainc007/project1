@@ -1,16 +1,16 @@
 <template>
-    <Head title="Competition"/>
+    <Head :title="$t('List')"/>
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Competition</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{$t('List')}}</h2>
         </template>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:p-8 space-y-6 bg-white rounded-lg">
                 <button-component
                     :href="route('competition.create')"
-                    label="Add"
+                    :label="$t('Add')"
                     :as="Link"
                     color="success"
                     icon="fas fa-plus"
@@ -22,7 +22,7 @@
                     :fetch-data-headers="fetchDataHeaders"
                     :heading="tableConfig.columns"
                     :per-page="tableConfig.perPage"
-                    :search-input-placeholder="'Search...'"
+                    :search-input-placeholder="$t('Search... ')"
                     v-on:action:click="actionClick"
                 ></data-table>
             </div>
