@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\UserAsTeamController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,5 +37,8 @@ Route::middleware(['auth'])
 
         Route::resource('competition',CompetitionController::class);
         Route::post('/competition/data', [CompetitionController::class,'data'])->name('competition.data');
+
+        Route::resource('user_as_team',UserAsTeamController::class);
+        Route::post('/userAsTeam/data', [UserAsTeamController::class,'data'])->name('user_as_team.data');
 
     });

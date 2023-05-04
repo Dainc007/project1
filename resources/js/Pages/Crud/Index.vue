@@ -9,7 +9,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:p-8 space-y-6 bg-white rounded-lg">
                 <button-component
-                    :href="route('competition.create')"
+                    :href="route(`${objectName}.create`)"
                     label="Add"
                     :as="Link"
                     color="success"
@@ -42,6 +42,8 @@ const tableConfig = computed(() => usePage().props.table)
 
 const fetchDataHeaders = {'X-CSRF-Token': usePage().props.csrf_token}
 
+const objectName = usePage().props.objectName;
+
 const actionClick = (event) => {
     let data = {};
     for (let key in event.action.params) {
@@ -54,7 +56,6 @@ const actionClick = (event) => {
         data
     })
 };
-
 
 </script>
 

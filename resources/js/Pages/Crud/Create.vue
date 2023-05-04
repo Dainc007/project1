@@ -3,7 +3,7 @@
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Competition</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ objectName }}</h2>
         </template>
 
         <div class="py-12">
@@ -11,13 +11,16 @@
                 <FormKit type="form" @submit="submit">
                     <FormKitSchema :schema="schema" />
                 </FormKit>
+<!--                <FormKit type="form" @submit="submit">-->
+<!--                    <FormKitSchema :schema="newForm" />-->
+<!--                </FormKit>-->
             </div>
         </div>
     </AuthenticatedLayout>
 </template>
 
 <script setup>
-import {Head,router} from '@inertiajs/vue3';
+import {Head, router, usePage} from '@inertiajs/vue3';
 import {FormKitSchema} from "@formkit/vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 
@@ -31,8 +34,10 @@ const schema = [
     }
 ];
 
+const objectName = usePage().props.objectName;
+const newForm    = usePage().props.assignTeamForm;
 const submit = (data) => {
-    router.post(route('competition.store'), data)
+    router.post(route(`${objectName}.store`), data)
 }
 
 </script>

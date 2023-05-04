@@ -21,13 +21,18 @@ import {Head,router,usePage} from '@inertiajs/vue3';
 import {reactive} from "vue";
 import {FormKitSchema} from "@formkit/vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import {da} from "@formkit/i18n";
 
 const model = reactive(usePage().props.model);
 
 const schema = usePage().props.form;
 
+const objectName = usePage().props.objectName;
+
 const submit = (data) => {
-    router.put(route('competition.update',{competition:data.id}), data)
+    let params = {};
+    params[objectName] = data.id
+    router.put(route(`${objectName}.update`,params), data)
 }
 
 </script>
