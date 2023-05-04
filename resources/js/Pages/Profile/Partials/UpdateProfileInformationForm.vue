@@ -28,7 +28,7 @@ const form = useForm({
             <h2 class="text-lg font-medium text-gray-900">{{$t('Profile Information')}}</h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                {{$t('Update your account's profile information and email address.')}}
+                {{$t('Update your account\'s profile information and email address.')}}
             </p>
         </header>
 

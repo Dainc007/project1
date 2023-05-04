@@ -45,7 +45,7 @@ const updatePassword = () => {
 
         <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
             <div>
-                <InputLabel for="current_password" :value="{{$t('Current Password')}}" />
+                <InputLabel for="current_password" :value="$t('Current Password')" />
 
                 <TextInput
                     id="current_password"
