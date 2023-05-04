@@ -66,7 +66,8 @@ class ResourceActions
     {
         return Inertia::render($this->resource->getView(Resource::EDIT_ACTION), [
             'model' => $model,
-            'form' => $this->resource->getForm(Resource::EDIT_ACTION)
+            'form' => $this->resource->getForm(Resource::EDIT_ACTION),
+            'objectName' => $this->resource->getResourceName()
         ]);
     }
 

@@ -64,7 +64,20 @@ class CompetitionController extends Controller
      */
     public function show(Competition $competition): Response
     {
-        return $this->actions->show($competition);
+        $response =  $this->actions->show($competition);
+
+        $response->with('assignTeamForm', [
+        [
+            '$formkit' => 'select',
+            'name' => 'name',
+            'label' => 'Name',
+            'children' => '$name',
+            'placeholder' => 'Select users',
+            'validation' => 'required'
+        ]
+    ]);
+
+        return $response;
     }
 
 }
