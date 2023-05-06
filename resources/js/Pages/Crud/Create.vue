@@ -24,18 +24,9 @@ import {Head, router, usePage} from '@inertiajs/vue3';
 import {FormKitSchema} from "@formkit/vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 
-const schema = [
-    {
-        $formkit: 'text',
-        name: 'name',
-        label: 'Name',
-        placeholder: 'Enter competition name',
-        validation: 'required|length:6,255'
-    }
-];
+const schema = usePage().props.form;
 
 const objectName = usePage().props.objectName;
-const newForm    = usePage().props.assignTeamForm;
 const submit = (data) => {
     router.post(route(`${objectName}.store`), data)
 }

@@ -36,6 +36,14 @@ class CompetitionResource extends Resource
                 'children' => '$name',
                 'placeholder' => 'Enter competition name',
                 'validation' => 'required|length:6,255'
+            ],
+            [
+                '$formkit' => 'text',
+                'name' => 'test',
+                'label' => 'Test',
+                'children' => '$test',
+                'placeholder' => 'Enter test name',
+                'validation' => 'required|length:6,255'
             ]
         ];
     }
